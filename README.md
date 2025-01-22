@@ -72,3 +72,16 @@ https://github.com/kanakanho/sensing-handtracking-websocket
 `.venv` の記述があるものを選ぶ
 
 3. 自由にグラフをプロットする
+
+## 可視化の例
+
+### 手の動きの可視化
+
+※ 以下の画像をクリックすると YouTube の動画が閲覧できます
+
+[![手の動きの可視化](http://img.youtube.com/vi/k7RMapjjvxY/0.jpg)](https://www.youtube.com/watch?v=k7RMapjjvxY)
+
+### 手首と指先の距離の変化の可視化
+
+![](docs/jupyter-notebookでの可視化例.png)
+

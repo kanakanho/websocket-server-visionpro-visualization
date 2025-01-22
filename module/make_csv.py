@@ -29,5 +29,13 @@ def make_csv():
             rows.append(parent_row)
 
     df = pd.DataFrame(rows)
+    # wrist と thumbTip, indexFingerTip, middleFingerTip, ringFingerTip, littleFingerTip の距離を計算
+    df['distance_wrist_thumbTip'] = ((df['wrist_3_0'] - df['thumbTip_3_0'])**2 + (df['wrist_3_1'] - df['thumbTip_3_1'])**2 + (df['wrist_3_2'] - df['thumbTip_3_2'])**2)**0.5
+    df['distance_wrist_indexFingerTip'] = ((df['wrist_3_0'] - df['indexFingerTip_3_0'])**2 + (df['wrist_3_1'] - df['indexFingerTip_3_1'])**2 + (df['wrist_3_2'] - df['indexFingerTip_3_2'])**2)**0.5
+    df['distance_wrist_middleFingerTip'] = ((df['wrist_3_0'] - df['middleFingerTip_3_0'])**2 + (df['wrist_3_1'] - df['middleFingerTip_3_1'])**2 + (df['wrist_3_2'] - df['middleFingerTip_3_2'])**2)**0.5
+    df['distance_wrist_ringFingerTip'] = ((df['wrist_3_0'] - df['ringFingerTip_3_0'])**2 + (df['wrist_3_1'] - df['ringFingerTip_3_1'])**2 + (df['wrist_3_2'] - df['ringFingerTip_3_2'])**2)**0.5
+    df['distance_wrist_littleFingerTip'] = ((df['wrist_3_0'] - df['littleFingerTip_3_0'])**2 + (df['wrist_3_1'] - df['littleFingerTip_3_1'])**2 + (df['wrist_3_2'] - df['littleFingerTip_3_2'])**2)**0.5
+
+    df['distance_sum'] = df['distance_wrist_thumbTip'] + df['distance_wrist_indexFingerTip'] + df['distance_wrist_middleFingerTip'] + df['distance_wrist_ringFingerTip'] + df['distance_wrist_littleFingerTip']
     df.sort_values(by=["time"], inplace=True)
     df.to_csv(f"data/{output_file}.csv", index=False)

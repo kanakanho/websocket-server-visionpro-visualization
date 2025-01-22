@@ -3,8 +3,11 @@
     "start": "node --env-file=.env server.mjs"
   },
   "dependencies": {
-    "http": "^0.0.1-security",
-    "ws": "^8.18.0",
-    "fs": "^0.0.1-security"
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5"
   }
 }
