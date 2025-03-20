@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const wss = new WebSocketServer({ port: process.env.PORT, host: process.env.HOST });
+console.log(`Server running at ws://${process.env.HOST}:${process.env.PORT}`);
 const clients = [];
 
 // dataディレクトリが存在しない場合は作成
