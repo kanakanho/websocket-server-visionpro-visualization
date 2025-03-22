@@ -2,6 +2,39 @@
 
 # setup
 
+## node
+
+依存関係のダウンロード
+
+```sh
+$ yarn
+```
+
+## websocket server
+
+visionpro からハンドトラッキングのデータをリアルタイムてで PC に同期するための websocket サーバ
+
+```sh
+$ yarn start
+```
+
+## client （web サイト）
+
+ハンドトラッキングの様子を可視化するためのクライアント
+
+```sh
+$ yarn vite
+```
+
+## visionpro
+
+以下のレポジトリを参考にしてください（必要に応じて websocket サーバーの URL を変更する必要があります）
+
+Immersive View を起動すると自動的に左手のハンドトラッキングのデータが送信されます
+（なお PC に負担がかかるので注意）
+
+https://github.com/kanakanho/spatial-painting
+
 ## python
 
 ### 1. 仮想環境の構築
@@ -21,35 +54,6 @@ $ . .venv/bin/activate
 ```sh
 $ pip install -r requirements.txt
 ```
-
-## node
-
-```sh
-$ yarn
-```
-
-## server
-
-```sh
-$ yarn start
-```
-
-## client
-
-通信が流れているかを確認できるだけのクライアント（データの送信機能なし）
-
-```sh
-$ open index.html
-```
-
-## visionpro
-
-以下のレポジトリを参考にしてください（必要に応じて websocket サーバーの URL を変更する必要があります）
-
-Immersive View を起動すると自動的に右手のハンドトラッキングのデータが送信されます
-（なお PC に負担がかかるので注意）
-
-https://github.com/kanakanho/sensing-handtracking-websocket
 
 # visualization
 
@@ -84,4 +88,3 @@ https://github.com/kanakanho/sensing-handtracking-websocket
 ### 手首と指先の距離の変化の可視化
 
 ![](docs/jupyter-notebookでの可視化例.png)
-
